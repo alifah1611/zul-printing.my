@@ -1,0 +1,650 @@
+* {
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "segoe ui", roboto, oxygen, ubuntu, cantarell, "fira sans", "droid sans", "helvetica neue", Arial, sans-serif;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+html,
+body 
+{
+    height: 100%;
+    background-color: #FFFFFF;
+    margin: 0;
+    padding: 0px;
+}
+
+.navtop {
+    background-color: #3f69a8;
+    height: 60px;
+    width: 100%;
+    border: 0;
+}
+.navtop div {
+    display: flex;
+    margin: 0 auto;
+    width: 1000px;
+    height: 100%;
+}
+.navtop div h1, .navtop div a {
+    display: inline-flex;
+    align-items: center;
+}
+.navtop div h1 {
+    flex: 1;
+    font-size: 24px;
+    padding: 0;
+    margin: 0;
+    color: #ecf0f6;
+    font-weight: normal;
+}
+.navtop div a {
+    padding: 0 20px;
+    text-decoration: none;
+    color: #c5d2e5;
+    font-weight: bold;
+}
+.navtop div a i {
+    padding: 2px 8px 0 0;
+}
+.navtop div a:hover {
+    color: #ecf0f6;
+}
+.content {
+    width: 1000px;
+    margin: 0 auto;
+    min-height: 100%;
+}
+.content h2 {
+    margin: 0;
+    padding: 25px 0;
+    font-size: 22px;
+    border-bottom: 1px solid #ebebeb;
+    color: #666666;
+}
+
+
+.image-popup {
+    display: none;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 99999;
+}
+.image-popup .con {
+    display: flex;
+    flex-flow: column;
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 5px;
+}
+.image-popup .con h3 {
+    margin: 0;
+    font-size: 18px;
+}
+.image-popup .con .edit, .image-popup .con .trash {
+    display: inline-flex;
+    justify-content: center;
+    align-self: flex-end;
+    width: 40px;
+    text-decoration: none;
+    color: #FFFFFF;
+    padding: 10px 12px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.image-popup .con .trash {
+    background-color: #b73737;
+}
+.image-popup .con .trash:hover {
+    background-color: #a33131;
+}
+.image-popup .con .edit {
+    background-color: #37afb7;
+}
+.image-popup .con .edit:hover {
+    background-color: #319ca3;
+}
+.home .upload-image {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #38b673;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 5px;
+    color: #FFFFFF;
+    padding: 10px 15px;
+    margin: 15px 0;
+}
+.home .upload-image:hover {
+    background-color: #32a367;
+}
+.home .images {
+    display: flex;
+    flex-flow: wrap;
+}
+.home .images a {
+    display: block;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    width: 300px;
+    height: 200px;
+    margin: 0 20px 20px 0;
+}
+.home .images a:hover span {
+    opacity: 1;
+    transition: opacity 1s;
+}
+.home .images span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    transition: opacity 1s;
+}
+.upload form {
+    padding: 15px 0;
+    display: flex;
+    flex-flow: column;
+    width: 400px;
+}
+.upload form label {
+    display: inline-flex;
+    width: 100%;
+    padding: 10px 0;
+    margin-right: 25px;
+}
+.upload form input, .upload form textarea {
+    padding: 10px;
+    width: 100%;
+    margin-right: 25px;
+    margin-bottom: 15px;
+    border: 1px solid #cccccc;
+}
+.upload form textarea {
+    height: 200px;
+}
+.upload form input[type="submit"] {
+    display: block;
+    background
+
+
+
+    -color: #38b673;
+    border: 0;
+    font-weight: bold;
+    font-size: 14px;
+    color: #FFFFFF;
+    cursor: pointer;
+    width: 200px;
+    margin-top: 15px;
+    border-radius: 5px;
+}
+.upload form input[type="submit"]:hover {
+    background-color: #32a367;
+}
+.delete .yesno {
+    display: flex;
+}
+.delete .yesno a {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #38b673;
+    font-weight: bold;
+    color: #FFFFFF;
+    padding: 10px 15px;
+    margin: 15px 10px 15px 0;
+    border-radius: 5px;
+}
+.delete .yesno a:hover {
+    background-color: #32a367;
+}
+
+.logo
+{
+    width: 125px;
+    height: 125px;
+    margin: 0 auto;
+}
+
+.logo img
+{
+    width: 100%;
+    border-radius: 100%;
+}
+
+.login
+{
+    margin:60px;
+    width: 30%;
+    /*background: grey;*/
+    background: rgba(0, 0, 0,0.2);
+    border:2px solid black;
+    padding: 60px;
+    border-radius: 10%;
+}
+
+.username input[type="text"]
+{
+    border:0;
+    /*background: none;*/
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border:2px solid black;
+    padding: 5px;
+    width: 200px;
+    outline: none;
+    border-radius: 10px;
+}
+
+.password input[type="password"]
+{
+    border:0;
+    /*background: none;*/
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border:2px solid black;
+    padding: 5px;
+    width: 200px;
+    outline: none;
+    border-radius: 10px;
+}
+
+.button-login
+{
+    background: green;
+    color: white;
+    border-radius: 7px;
+    width: 100px;
+    height: 35px;
+}
+
+.utama
+{
+    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('images/baju7.jpg');
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+}
+
+.Hmenu
+{
+    max-width: 1200px;
+    margin: auto;
+}
+
+.Hmenu ul
+{
+    list-style-type: none;
+    float: right;
+    margin-top: 25px;
+    /*color: white;*/
+}
+
+.Hmenu ul li
+{
+    display: inline-block;
+}
+
+.Hmenu ul li a
+{
+    text-decoration: none;
+    font-family: Consolas;
+    padding: 5px 20px;
+    border: 1px solid transparent;
+    transition: 0.5s ease;
+    color: white;
+}
+
+.Hmenu ul li a:hover
+{
+    color: black;
+    background: white;
+}
+
+.icon img
+{
+    float: right;
+    height: auto;
+    width: 60px;
+    padding: 5px;
+    border-radius: 100%;
+    margin-top: 10px;
+    /*margin-left: 10px;*/
+}
+
+.title h1
+{
+    position: absolute;
+    font-size: 20px;
+    top: 45%;
+    left: 50%;
+    color: white;
+    transform: translate(-50%,-50%);
+}
+
+.button
+{
+    position: absolute;
+    top: 54%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.button ul
+{
+    list-style-type: none;
+    margin-top: 25px;
+}
+
+.button ul li
+{
+    display: inline-block;
+}
+
+.button ul li a
+{
+    color: white;
+    text-decoration: none;
+    font-family: Consolas;
+    padding: 5px 20px;
+    width: 100px;
+    border: 1px solid white;
+    transition: 0.5s ease;
+
+}
+
+.button ul li a:hover
+{
+    color: black;
+    background: white;
+}
+
+/*FOOTER*/
+.footer
+{
+    background: #252629;
+    color: #d3d3d3;
+    height: 300px;
+    position: relative;
+}
+
+.footer .footer-bottom
+{
+    background: #343a40;
+    color: #686868;
+    height: 40px;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 0px;
+    padding-top: 15px;
+}
+
+.footer .footer-content
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.footer-content h3
+{
+    color: white;
+    font-size: 25px;
+}
+
+.contact
+{
+    display: flex;
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 3rem 0;
+}
+
+.contact li
+{
+    /*color: white;*/
+    list-style: none;
+    display: inline-flex;
+    margin-right: 10px;
+    padding: 5px;
+}
+
+.contact a
+{
+    color: white;
+    text-decoration: none;
+}
+
+.contact a i
+{ 
+    color: white;
+    /*text-decoration: none;*/
+}
+
+.contact a:hover
+{
+    color: lightblue;
+    transform: scale(1.1);
+}
+
+/*footer selain home page*/
+.bottom
+{
+    background: #343a40;
+    color: #686868;
+    height: 40px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    bottom: 0px;
+    padding-top: 15px;
+}
+
+.collection
+{
+    margin: 10px 50px;
+    position: center;
+}
+
+.collection img
+{
+    transition: 0.5s;
+    width: 50%;
+    height: auto;
+    padding: 10px;
+    position: relative;
+}
+
+.collection a
+{
+    list-style-type: none;
+    display: block;
+}
+
+.collection img:hover
+{
+    
+    transform: scale(1.1);
+}
+
+.index-container
+{
+    text-align: center;
+    margin: 30px;
+}
+
+.index-btn1
+{
+    font-family: 'Lemon Milk';
+    border: none;
+    border-radius: 10px;
+    background:#00ada5;
+    padding: 10px 20px;
+    width: 250px;
+    height: 150px;
+    margin: 5px;
+    color: white;
+    transition: 0.5s;
+}
+
+.index-btn1:hover
+{
+    color: black;
+    background: #62e3d6;
+    transform: scale(1.1);
+}
+
+
+/*slide images css*/
+
+.slider
+{
+    width: 800px;
+    height: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.slides
+{
+    width: 500%;
+    height: 500px;
+    display: flex;
+}
+
+.slides input
+{
+    display: none;
+}
+
+.slide
+{
+    width: 20%;
+    transition: 2s;
+}
+
+.slide img
+{
+    width: 800px;
+    height: 500px;
+}
+
+
+/*CSS for manual slide navigation*/
+
+.navigation-manual
+{
+    position: absolute;
+    width: 800px;
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
+}
+
+.manual-btn
+{
+    border: 2px solid #40D3DC;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+
+}
+
+.manual-btn:not(:last-child)
+{
+    margin-right: 40px;
+} 
+
+.manual-btn:hover
+{
+    background: #40D3DC;
+}
+
+#radio1:checked ~ .first
+{
+    margin-left: 0;
+}
+
+#radio2:checked ~ .first
+{
+    margin-left: -20%;
+}
+
+#radio3:checked ~ .first
+{
+    margin-left: -40%;
+}
+
+#radio4:checked ~ .first
+{
+    margin-left: -60%;
+}
+
+
+/*CSS for automatic navigation*/
+
+.navigation-auto
+{
+    position: absolute;
+    display: flex;
+    width: 800px;
+    justify-content: center;
+    margin-top: 460px;
+}
+
+.navigation-auto div
+{
+    border : 2px solid #40D3DC;
+    padding: 5px;
+    border-radius: 10px;
+    transition: 1s;
+}
+
+.navigation-auto div:not(:last-child)
+{
+    margin-right: 40px;
+}
+
+#radio1:checked ~ .navigation-auto .auto-btn1
+{
+    background: #40D3DC;
+}
+
+#radio2:checked ~ .navigation-auto .auto-btn2
+{
+    background: #40D3DC;
+}
+
+#radio3:checked ~ .navigation-auto .auto-btn3
+{
+    background: #40D3DC;
+}
+
+#radio4:checked ~ .navigation-auto .auto-btn4
+{
+    background: #40D3DC;
+}
